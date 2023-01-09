@@ -34,7 +34,7 @@ const createBlog = async function (req, res) {
     //IF AUTHOR ID IS CORRECT THEN CREATING THE DOCUMENT------------------------------------
     if (!isValidObjectId(data.authorId))
     return res.status(400).send({ status: false, message: "Enter Valid AuthorId" })
-const createdBlog = await blogModel.create(data)
+const createdBlog = await BlogModel.create(data)
 res.status(201).send({ status: true, message: "Blog Created Successfully", data: createdBlog })
 
   } 
